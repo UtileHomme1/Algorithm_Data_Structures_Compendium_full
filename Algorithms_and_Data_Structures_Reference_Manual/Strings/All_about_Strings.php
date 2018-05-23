@@ -1,0 +1,416 @@
+<!-- done -->
+
+<!-- What are Strings and how are they defined in C++ -->
+<!-- Reference - https://www.geeksforgeeks.org/stdstring-class-in-c/ -->
+
+- Strings are defined as an array of characters.
+- The difference between a string and a character array is that a "string" is terminated by a '\0' special character.
+
+<!-- How to declare a string -->
+
+- it is same as declaring a 1-D array
+
+char string_name[size];
+
+<!-- Different ways of initializing strings -->
+
+1. char str[] = "GeeksforGeeks";
+
+2. char str[50] = "GeeksforGeeks";
+
+3. char str[] = {'G','e','e','k','s','\0'};
+
+4. char str[14] = {'G','e','e','k','s','\0'};
+
+<!-- Initializing character arrays -->
+https://imgur.com/a/kIaaws4
+
+https://imgur.com/a/ordhiUF
+
+https://imgur.com/a/1PiilAh
+
+https://imgur.com/a/22Ok4A8
+
+<!-- Memory representation of a string -->
+
+http://imgur.com/a/gtXW0
+
+<!-- How Strings are represented in C++ -->
+
+- C++ can represent strings as a "sequence of characters" in the form of objects of a class
+- the class is called std::string
+- String class stores the characters as a sequence of bytes with the functionality of allowing access to single byte characters
+
+<!-- String vs Character array in c++ -->
+
+- A character array is an array of characters that can be terminated by a null character
+- A string is a class which defines objects that can be represented as stream of characters
+
+- Size of character array has to be allocated "statically" .
+- this means that no more memory can be allocated at run time
+- also, unused allocated memory is wasted in case of character array
+- Memory is allocated "dynamically" in case of strings.
+- so, more memory can be allocated at run time.
+- as no memory is preallocated, no memory is wasted.
+
+- Implementation of character array is faster than std:string
+- Strings are slower when compared to implementation than char array
+
+- Char array does not offer much inbuilt functions to manipulate strings
+- String class define number of functionalities which allow many operations on strings
+
+** Size of character array > = number of characters in string + 1
+
+<!-- C++ string class -->
+
+- internally uses char array to store characters but all the memory management, allocation, null termination is handled by string class itself that is why it is easy to use.
+- the length of c++ string can be changed at runtime because of dynamic allocation of memory
+
+
+<!-- Functions present in String class -->
+
+1. getline()
+- This function is used to store a stream of characters as entered by the user in the object memory.
+
+<!-- Eg -
+#include <string>
+
+int main()
+{
+string str;
+
+getline(cin,str);
+
+cout<<str;
+} -->
+
+2. push_back()
+- this function is used to input a character at the end of the string
+
+<!-- Eg -
+int main()
+{
+string str;
+
+getline(cin,str);
+
+str.push_back('c');
+cout<<str;
+return 0;
+} -->
+
+--- use "isalpha" function to check whether a string has an alphabet or a special character
+--- use "isdigit" for integers
+
+3. pop_back()
+- is used to delete the last character of the string
+<!--
+Eg -
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+string s;
+
+getline(cin,s);
+
+cout<<s<<endl;
+
+s.pop_back();
+
+cout<<s;
+
+
+return 0;
+} -->
+
+4. capacity()
+- returns the capacity allocated to the string which can be equal to or more than the size of the string
+- Additional space is allocated so that when new characters are added to the string, operations can be done efficiently
+
+<!-- Eg -
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+string s;
+
+getline(cin,s);
+
+cout<<s<<endl;
+
+cout<<s.capacity()<<endl;
+
+
+return 0;
+}
+
+5. resize()
+- changes the size of the string
+
+Eg -
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+string s;
+
+getline(cin,s);
+
+cout<<s<<endl;
+
+s.resize(6);
+
+cout<<s;
+
+
+return 0;
+} -->
+
+
+6. shrink_to_fit()
+- decreases the capacity of the string and makes it equal to the size
+- is useful for saving additional memory if we are sure that no further operations will take place
+<!--
+Eg -
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+string s;
+
+getline(cin,s);
+
+cout<<s<<endl;
+
+s.shrink_to_fit();
+
+cout<<s;
+
+
+return 0;
+} -->
+
+7. begin()
+- returns the iterator to the beginning of the string
+
+8. end()
+- returns the iterator to the end of the string
+
+9. rbegin()
+- returns a reverse iterator pointing to the end of the string
+
+10. rend()
+- returns a reverse iterator pointing to the beginning of the string
+
+<!-- Eg -
+
+#include <iostream>
+#include <string>
+#include <iterator>
+
+using namespace std;
+
+int main()
+{
+
+string s = "jatin";
+
+cout<<s<<endl;
+
+std::string::iterator i;
+std::string::reverse_iterator j;
+
+//displaying the string using iterators
+for(i=s.begin(); i!=s.end();i++)
+{
+cout<<*i;
+}
+
+cout<<endl;
+//displaying the string using reverse iterators
+for(j=s.rbegin(); j!=s.rend();j++)
+{
+cout<<*j;
+}
+
+return 0;
+} -->
+
+11. copy("char array", len, pos)
+- copies the substring from one part into target character array
+- takes 3 arguments (the target array, length to be copied and starting position in string to start copying)
+
+<!-- Eg -
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+string str1 = "jatin loves comics";
+
+char ch[80];
+
+str1.copy(ch, 13,1);
+
+cout<<ch<<endl;
+} -->
+
+12. swap()
+- swaps on string with another
+
+<!-- Eg -
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+string s1 = "Jatin loves reading";
+
+string s2 = "Jatin loves comics";
+
+s1.swap(s2);
+
+cout<<s1<<endl;
+cout<<s2<<endl;
+} -->
+
+<!-- Different ways of creating an array of strings -->
+<!-- Reference - https://www.geeksforgeeks.org/array-strings-c-3-different-ways-create/ -->
+
+- Arrays of strings can be created in C++, which can be quite handy
+
+1. Using a 2D array
+- this method is useful for shuffling, comparing and accessing randomly
+
+<!-- Disadvantages -->
+- Number of strings and size of string (both the values are fixed)
+- A 2D array is allocated whose second dimension is equal to maximum sized string which causes wastage of space
+
+2. Using string keyword
+- here, the size of the string is not fixed, hence the space is saved
+
+Eg -
+String colour[4];
+
+<!-- Disadvantages -->
+- Array is of fixed size
+
+3. Using vectors
+- STL container vector can be used to dynamically allocate array
+
+<!-- What is tokenizing a string -->
+<!-- Reference - https://www.geeksforgeeks.org/tokenizing-a-string-cpp/ -->
+
+- it denotes splitting a string with respect to a delimiter
+
+<!-- What is the "getline" in c++ -->
+<!-- Reference - https://www.geeksforgeeks.org/getline-string-c/ -->
+<!-- Reference - https://www.geeksforgeeks.org/getline-function-character-array/ -->
+
+- it is used to read a string or a line from input stream.
+- it reads a whole line of text that ends with "new line" or until the maximum limit is reached
+- it is present in <string> header
+
+  <!-- Syntax 1 -->
+
+  istream& getline(istream &is, string& str, char delim)
+
+  a. is
+  - it is an object of istream class and tells the function about the stream from where to read the input from
+
+  b. str
+  - it is a string object, the input is stored in this object after being read from the stream
+
+  c. delim
+  - it is the delimitation character which tells the function to stop reading further input after reading this character
+
+  <!-- Syntax 2 -->
+
+  istream& getline(istream &is, string& str)
+
+  <!-- (buffer, stream_size, delimiter) -->
+  istream& getline(char*, int size, char='\n')
+
+  <!-- The delimiter character is considered as '\n' -->
+  istream& getline(char*, int size)
+
+  - it doesn't accept any delimitation character
+  - it considers "\n" (new line) character as the delimitation character
+
+  ** it extracts the characters from the input stream and appends it to the string object until the delimiting character is encountered
+  - the previous stored value in the string object "str" will be replaced by the input string if any
+
+  <!-- Eg -
+
+  // C++ program to show the getline() with
+  // character array
+  #include <iostream>
+  using namespace std;
+
+  int main()
+  {
+  char str[20];
+  cout << "Enter Your Name::";
+
+  // see the use of getline() with array
+  // str also replace the above statement
+  // by cin >> str and see the difference
+  // in output
+  cin.getline(str, 20);
+
+  cout << "\nYour Name is:: " << str;
+  return 0;
+} -->
+
+<!-- What is a stringstream -->
+<!-- Reference - https://www.geeksforgeeks.org/stringstream-c-applications/ -->
+
+- it associates a string object with a stream allowing you to read from the string as if it were a stream (like cin)
+
+1. clear()
+- to clear the stream
+
+2. str()
+- to get and set the string object whose content is present in the stream
+
+3. operator "<<"
+- to add a string to the stringstream object
+
+4. operator ">>"
+- to read something from the stringstream object
+
+<!-- How to use the "strchr()" function -->
+<!-- Reference - https://www.geeksforgeeks.org/strchr-function-in-cpp/ -->
+
+- it is used for string handling
+- "cstring" is the header file
+
+- the function returns a pointer to the last occurrence of a character in a string
+
+- the character whose last occurrence we want to find in passed as the second argument to the function and the string in which we have to find the character is passed as the first argument to the function
+
+<!-- Syntax -->
+char *strrchr(const char *str, int c)
+
+- "str" is the string and "c" is the character to be located
+- it is passed as its int promotion, but it is internally converted back to char
