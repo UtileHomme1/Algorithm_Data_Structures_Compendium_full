@@ -549,3 +549,11 @@ https://imgur.com/a/ISDbc
 Eg -
 y = x % 5
 - where "x" is the key value and "y" is the index of the assigned bucket
+
+<!-- How hashing looks in java -->
+
+<!-- Reference - https://www.geeksforgeeks.org/internal-working-of-hashmap-java/ -->
+
+<!-- Reference http://javaconceptoftheday.com/how-hashmap-works-internally-in-java/ -->
+
+<!-- Best Reference - https://www.youtube.com/watch?v=c3RVW3KGIIE -->
