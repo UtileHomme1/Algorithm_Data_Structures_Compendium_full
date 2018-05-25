@@ -334,6 +334,7 @@ https://imgur.com/a/a5oRF
 - the lookup procedure might have to scan all its entries, so the worst-case cost is proportional to the number(N) of entries in the table
 
 <!-- Why hashing is better than other methods -->
+<!-- Reference - https://www.geeksforgeeks.org/hashing-set-1-introduction/ -->
 
 - Suppose we wish to design a system for storing employee records keyed using phone numbers
 - we wish the following queries to be performed efficiently
@@ -366,6 +367,48 @@ d.
 - extra space required is huge
 Eg - if phone number is n digits , we need O(m * 10^n) space for table where "m" is size of a pointer to record
 - Another problem is an integer in a programming language may not store "n" digits
+
+- Hashing is a solution that can be used in almost all such solutions and performs extremely well compared to above data structures like Array, Linked List, Balanced BST.
+
+** With hashing we get O(1) search time on average (under reasonable assumptions) and O(n) in worst case
+
+- Hashing is an improvement over Direct Access Table.
+- The idea is to use hash function that converts a given phone number or any other key to a small number and uses the small number as index in a table called hash table.
+
+<!-- Hash function -->
+
+- A function that converts a given big phone number to a small practical integer value
+- The mapped integer value is used as an index in hash table,
+- A hash function maps a big number or string to a small integer that can be used as index in hash table
+
+** A good hash function should have the following properties
+1. Efficiently computable
+2. Should uniformly distribute the keys (each table position is equally likely for each key)
+
+Eg - a phone number's bad hash function is to take first three digits
+-  a better function is consider last 3 digits
+
+<!-- Hash Table -->
+
+- An array that stores pointers to records corresponding to a given phone number
+- An entry in hash table is NIL if no existing phone number has hash function value equal to the index for the entry.
+
+<!-- Collision Handling -->
+
+- Since a hash function gets us a small number for a big key, there is a possibility that two key result in the same value.
+- The situation where a newly inserted key maps to an already occupied slot in hash table is called collision and must be handled using some collision handling techniques
+
+1. Chaining
+- The idea is to make each cell of hash table point to a linked list of records that have same hash function value
+- Chaining is simple, but requires additional memory outside the table
+
+2, Open Addressing
+- In Open Addressing, all elements are stored in the hash table itself.
+- Each table entry contains either a record or NIL.
+- When searching for an element, we one by one examine table slots until the desired element is found or it is clear that the element is not in the table
+
+<!-- Video Reference Gfg - https://www.youtube.com/watch?time_continue=278&v=wWgIAphfn2U -->
+
 
 <!-- What is the Load factor -->
 
@@ -557,3 +600,116 @@ y = x % 5
 <!-- Reference http://javaconceptoftheday.com/how-hashmap-works-internally-in-java/ -->
 
 <!-- Best Reference - https://www.youtube.com/watch?v=c3RVW3KGIIE -->
+
+<!-- What is separate chaining -->
+<!-- Reference - https://www.geeksforgeeks.org/?p=142806 -->
+
+- The idea is to make each cell of hash table point to a linked list of records that have the same hash function value
+
+- Let the hash function be "key mod 7" and sequence of keys as 50, 700, 76, 85, 92,, 73, 101
+
+1. 50 = 1
+2. 700 = 0
+3. 76 = 6
+4. 85 = 1
+5. 92 = 1
+6. 73 = 3
+7. 101 = 3
+
+https://imgur.com/a/i8t9Kn8
+
+<!-- Hashing with chaining program explanation -->
+<!-- Reference - https://www.geeksforgeeks.org/c-program-hashing-chaining/ -->
+
+- Let's create a hash function, such that our hash table has 'N' number of buckets
+- To insert a node into the hash table, we need to find the hash index for the given key.
+
+hashindex = key%noOfBuckets
+
+a. Insert
+- Move to the bucket corresponding to the above calculated hash index and insert the new node at the end of the list
+
+b. Delete
+- Calcultae the hash index for the key, move to the bucket corresponding to the calculated hash index, search the list in the current bucket to find and remove the node with the given key (if found)
+
+<!-- Hashing with Open Addressing -->
+<!-- Reference - https://www.geeksforgeeks.org/hashing-set-3-open-addressing/ -->
+
+- Here, all elements are stored in the hash table itself
+** At any point, the size of the table must be greater than or equal to total number of keys
+
+<!-- Functions involved in Open Addressing -->
+
+a. Insert(k)
+- Keep probing until an empty slot is found
+- Once an empty slot is found, insert k
+
+b. Search(k)
+- Keep probing until slot's key doesn't become equal to "k" or an empty slot is reached
+
+c. Delete(k)
+- Delete operation is interesting
+- If we simply delete a key, then search may fail
+- So slots of deleted keys are marked specially as "deleted"
+
+** Insert can insert an item in a deleted slot but search doesn't stop at a deleted slot
+
+** Open Addressing is done in the following way
+
+a. Linear Probing
+- we linearly probe for the next slot
+- Typical gap between two probes is 1
+
+Let hash(x) be the slot index computed using hash function and "S" be the table size
+
+<!-- What happens in Linear Probing -->
+https://imgur.com/a/arfZo1E
+
+<!-- Eg- -->
+
+Let us consider a hash function "key mod 7" and the sequence of keys as 50, 700, 76, 85, 92, 73, 101
+
+https://imgur.com/a/gpcPmTE
+
+<!-- What is the CLUSTERING problem faced in Linear Probing -->
+- The main problem with linear probing is clustering, many consecutive elements form groups and it starts taking time to find a free slot or to search an element
+
+b. Quadratic Probing
+- We look for (i^2) slot in the i'th iteration
+
+https://imgur.com/a/fGzrtyK
+
+c. Double Hashing
+- We use another function hash2(x) and look for i*hash2(x) slot in the i'th rotation
+
+https://imgur.com/a/m63d7Lh
+
+<!-- Reference - https://www.cse.cuhk.edu.hk/irwin.king/_media/teaching/csc2100b/tu6.pdf  (study this in detail)-->
+
+<!-- Comparison of the above 3 methods -->
+
+- Linear probing has the best cache performance, but suffers from clustering.
+- One more advantage of Linear probing is easy to compute
+
+- Quadratic probing lies between two in terms of cache performance and clustering
+
+- Double hashing has poor cache performance but no clustering.
+- Double hashing requires more computation time as two hash functions need to be computed
+
+https://imgur.com/a/YCXiOjS
+
+<!-- Performance of Open Addressing -->
+
+- Like Chaining, performance of hashing can be evaluated under the assumption that each key is equally likely to be hashed to any slot of table (simple uniform hashing)
+
+m = number of slots in the hash table
+n = number of keys to be inserted in the hash table
+
+Load factor alpha = n/m (<1)
+
+Expected time to search/ insert/delete < 1 / (1-alpha)
+
+<!-- Reference - https://www.youtube.com/watch?v=Dk57JonwKNk
+
+http://courses.csail.mit.edu/6.006/fall11/lectures/lecture10.pdf
+-->
