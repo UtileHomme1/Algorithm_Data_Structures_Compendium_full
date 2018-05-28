@@ -414,3 +414,92 @@ char *strrchr(const char *str, int c)
 
 - "str" is the string and "c" is the character to be located
 - it is passed as its int promotion, but it is internally converted back to char
+
+<!-- How to use isspace() to count the whitespace characters -->
+<!-- Reference - https://www.geeksforgeeks.org/isspace-in-c-and-its-application-to-count-whitespace-characters/ -->
+
+- it is a predefined function used for string and character handling.
+- cstring is the header file required for string functions and cctype is the header file required for character functions
+
+Different types of whitespace characters
+
+' ' - space
+'\t - Horizontal tab
+'\n' - Newline
+'\v' - Vertical tab
+'\f' - Feed
+'\r' - carriage return
+
+<!-- Syntax -->
+- int isspace(int x)
+x : x is character to be checked
+
+<!-- Difference between char* vs std:string vs char[] -->
+
+<!-- Reference - https://www.geeksforgeeks.org/char-vs-stdstring-vs-char-c/ -->
+
+<!-- 1. char* -->
+
+- it is a pointer to the string literal
+
+<!-- Syntax -->
+
+char *str = "This is GeeksForGeeks";
+
+<!-- Pros -->
+
+1. Only one pointer is required to refer to the whole string
+  - that shows this is memory efficient
+
+2. No need to declare the size of the string beforehand
+
+<!-- 2. std::string -->
+
+- here "str" is the object of std::string class which is an instantiation of the basic_string class template that uses char (i.e. bytes) as its character type
+
+<!-- Syntax: -->
+
+std::string str = "This is GeeksForGeeks";
+
+3. char[]
+
+<!-- Syntax -->
+
+char str[empty/size] = "This is GeeksForGeeks";
+
+- here, "str" is an array of characters denoting the string
+
+<!-- Pros -->
+
+- we can modify the string at a later stage in the program
+
+<!-- Cons -->
+
+1. This is a statically allocated sized array which consumes space in the stack
+
+2. We need to take a large size of the array if we wish to concatenate or manipulate with other strings since the size of string is fixed.
+
+Eg-
+<!--
+// CPP program to illustrate char
+// concatenation using standard functions
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+    // take large size of array
+    char str[10] = "Hello";
+
+    cout << "Before Concatenation : " << str << endl; // Hello
+    strcat(str, " World");
+    cout << "After Concatenation : " << str; // Hello World
+
+    return 0;
+} -->
+
+Output:
+
+<!-- Before Concatenation : Hello
+After Concatenation : Hello World -->

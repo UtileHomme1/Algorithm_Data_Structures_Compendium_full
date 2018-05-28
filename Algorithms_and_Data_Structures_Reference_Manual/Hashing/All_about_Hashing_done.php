@@ -130,7 +130,7 @@ Load factor = (Total number of items stored)/(size of the array)
 
 - We also practise "Closed addressing"
 - The indices act as a pointer to the next node in the linked list
-- we can multiple data present a the same index
+- we can have multiple data present at the same index
 
 <!-- Where is hashing used -->
 - it is widely used in database indexing, compilers, caching, password authentication etc.
@@ -335,6 +335,7 @@ https://imgur.com/a/a5oRF
 
 <!-- Why hashing is better than other methods -->
 <!-- Reference - https://www.geeksforgeeks.org/hashing-set-1-introduction/ -->
+<!-- Reference - https://www.youtube.com/watch?v=wWgIAphfn2U -->
 
 - Suppose we wish to design a system for storing employee records keyed using phone numbers
 - we wish the following queries to be performed efficiently
@@ -407,9 +408,6 @@ Eg - a phone number's bad hash function is to take first three digits
 - Each table entry contains either a record or NIL.
 - When searching for an element, we one by one examine table slots until the desired element is found or it is clear that the element is not in the table
 
-<!-- Video Reference Gfg - https://www.youtube.com/watch?time_continue=278&v=wWgIAphfn2U -->
-
-
 <!-- What is the Load factor -->
 
 - Given a hash table "T" with "m" slots holding "n" elements, the load factor is defined as
@@ -466,7 +464,7 @@ where "k" is the key
 - "mod 4" of that will give us the last 2 bits of the integer
 - "mod 8" of that will give us the last 3 bits of the integer
 
-b. use
+b. use (at video length 15.00)
 
 h(k) = round up of (m (k A mod 1))
 where "k" is the key
@@ -482,13 +480,14 @@ Steps involved:
 - Here choice of "m" is not critical
 - "m" can be a power of 2 here
 
-c. Multiply, Add and Divide (MAD)
+c. Multiply, Add and Divide (MAD) (at video length 18.00)
 
 h(k) = (ak + b) mod N
 - where "a" and "b" are some fixed numbers
 - N is the size of the table
 
 "a" should not be multiple of "N"
+- because (ak)mod N will be 0 and for any key we will get the index as "b"
 
 <!-- How do random generators work -->
 - the first time "ak+b" mod N is computed (the starting value of "k" is the seed)
@@ -496,7 +495,7 @@ h(k) = (ak + b) mod N
 - the same process is followed always
 - all the generated numbers are known as pseudo random numbers because once we know the "seed" , we can always figure out the numbers being generated
 
-<!-- What are universal hash functions -->
+<!-- What are universal hash functions --> (at video length 21:00)
 
 - It is possible that we have a set of hash functions (say 15)
 - depending on the keys, we pick up a particular hash function . The same hash function will be used for insertion, search and delete
@@ -504,7 +503,7 @@ h(k) = (ak + b) mod N
 
 <!-- Other methods for Collision resolutions -->
 
-a. Open Addressing
+a. Open Addressing (at video length 25:00)
 - Here the number of elements need to be less than the number of slots available in the hash table
 - Each index of the table will either contain an element or will be NULL
 
@@ -526,7 +525,7 @@ https://imgur.com/a/rUfdI
 <!-- Disadvantage -->
 - might be a little slower than chaining
 - The elements tend to aggregate or form clusters
-https://imgur.com/a/TPykf
+https://imgur.com/a/TPykf (at video length 33:00)
 
 a.2 Searching
 ** For searching we go to "k mod 13" and continue to look at the successive locations
@@ -546,7 +545,7 @@ https://imgur.com/a/iK3eD
 
 - if too many "markers" are there, just rehash (remove all the elements and calculate the indices freshly)
 
-b. Double Hashing
+b. Double Hashing (at video length 42:00)
 - here, we use two hash functions
 
 h1(k) will determine the index
@@ -604,9 +603,12 @@ y = x % 5
 <!-- What is separate chaining -->
 <!-- Reference - https://www.geeksforgeeks.org/?p=142806 -->
 
+<!-- Insertion example -->
+https://imgur.com/a/O4U4xBX
+
 - The idea is to make each cell of hash table point to a linked list of records that have the same hash function value
 
-- Let the hash function be "key mod 7" and sequence of keys as 50, 700, 76, 85, 92,, 73, 101
+- Let the hash function be "key mod 7" and sequence of keys as 50, 700, 76, 85, 92, 73, 101
 
 1. 50 = 1
 2. 700 = 0
@@ -630,7 +632,7 @@ a. Insert
 - Move to the bucket corresponding to the above calculated hash index and insert the new node at the end of the list
 
 b. Delete
-- Calcultae the hash index for the key, move to the bucket corresponding to the calculated hash index, search the list in the current bucket to find and remove the node with the given key (if found)
+- Calculate the hash index for the key, move to the bucket corresponding to the calculated hash index, search the list in the current bucket to find and remove the node with the given key (if found)
 
 <!-- Hashing with Open Addressing -->
 <!-- Reference - https://www.geeksforgeeks.org/hashing-set-3-open-addressing/ -->
@@ -705,7 +707,7 @@ https://imgur.com/a/YCXiOjS
 m = number of slots in the hash table
 n = number of keys to be inserted in the hash table
 
-Load factor alpha = n/m (<1)
+<!-- Load factor alpha = n/m (<1) -->
 
 Expected time to search/ insert/delete < 1 / (1-alpha)
 
