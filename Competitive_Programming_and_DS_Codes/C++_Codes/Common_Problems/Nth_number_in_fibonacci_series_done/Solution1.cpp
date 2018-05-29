@@ -25,7 +25,7 @@ int fibonacci(int n)
 
 int main()
 {
-    int k = 9;
+    int k = 6;
 
     int nth = fibonacci(k);
 
