@@ -96,3 +96,65 @@ vectors are stored in contiguous locations
 
 8. swap(list2)
 - is used to swap one list element with other
+
+<!-- Difference between remove() and remove_if() -->
+
+<!-- Reference - https://www.geeksforgeeks.org/listremove-listremove_if-c-stl/ -->
+
+1. list::remove()
+- is used to remove all the values from the list that correspond to the value given as the parameter to the function
+
+<!-- Syntax -->
+
+listname.remove(value)
+
+Parameters
+- the value of the element to be removed is passed as the parameter
+
+Result
+- removes all the elements of the container equal to the value passed as parameter
+
+2. list::remove_if()
+- is used to remove all the values from the list that correspond true to the predicate or condition given as parameter to the function
+- the function iterates through every member of the list container and removes all elements that returns true for the predicate
+
+<!-- Syntax -->
+
+listname.remove_if(predicate)
+
+Parameters
+- The predicate in the form of a function pointer or function object is passed as the parameter
+
+Result
+- removes all the elements of the container which return true for the predicate
+
+<!-- Empty and size function in list -->
+
+<!-- Reference - https://www.geeksforgeeks.org/listempty-listsize-c-stl/ -->
+
+1. list::empty()
+- is used to check if the list container is empty or not
+
+<!-- Syntax -->
+
+listname.empty()
+
+Parameters
+- no parameters passed
+
+Returns
+- true, if list is empty
+- false, otherwise
+
+2. list::size()
+- is used to return the size (no of elements) of the list container
+
+<!-- Syntax -->
+
+listname.size()
+
+Parameters
+- No parameters passed
+
+Return:
+- Number of elements in the container

@@ -503,3 +503,22 @@ Output:
 
 <!-- Before Concatenation : Hello
 After Concatenation : Hello World -->
+
+<!-- How to use string::at function to extract characters -->
+
+<!-- Reference - https://www.geeksforgeeks.org/stdstringat-in-c/ -->
+
+- used to extract characters by characters from a given string
+
+<!-- Syntax -->
+
+char &string::at(size_type index)
+
+const char &string::at(size_type index) const
+
+** Both forms return the character that has the index "index" (the first character has index 0)
+
+- For all strings, an index greater than or equal to length() as value is invalid
+
+Return value
+- returns the character at a specified position in the string
