@@ -1,3 +1,5 @@
+<!-- Evernote done -->
+
 <!-- What is an Array -->
 <!-- Reference - https://www.geeksforgeeks.org/arrays-in-c-language-set-1-introduction/ -->
 
@@ -68,7 +70,7 @@ int a = INT_MIN / MAX
 - "array" is a pointer to the first element of the array
 - "&array" is a pointer to whole array of int [5]
 
-- addition of 1 to "array" moves the address by only one position 
+- addition of 1 to "array" moves the address by only one position
 - addition of 1 to "&array" moves the address by the (size of the array * element type)
 
 https://imgur.com/a/XqRD06z

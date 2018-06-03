@@ -522,3 +522,17 @@ const char &string::at(size_type index) const
 
 Return value
 - returns the character at a specified position in the string
+
+<!-- Difference between strcat() and strncat() -->
+
+<!-- Reference - https://www.geeksforgeeks.org/strcat-vs-strncat-c/ -->
+
+- The strcat() function will append a copy of the source string to the end of the destination string
+
+- The strcat() takes two arguments
+
+1. dest
+2. src
+
+- it will append a copy of the source string in the destination string
+- the terminating character at the end of dest is replaced by the first character of src

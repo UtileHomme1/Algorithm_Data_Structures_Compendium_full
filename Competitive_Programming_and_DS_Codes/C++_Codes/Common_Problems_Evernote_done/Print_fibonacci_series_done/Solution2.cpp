@@ -1,3 +1,6 @@
+// Refer to CCI Eg - 15 (page 34)
+// Typical Dynamic Programming Problem
+
 #include <iostream>
 
 using namespace std;
