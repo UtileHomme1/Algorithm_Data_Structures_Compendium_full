@@ -22,3 +22,22 @@ https://imgur.com/a/kdaLOM0
 
 (unbalanced BST)
 https://imgur.com/a/60iXSKO
+
+<!-- Binary Search Tree in Detail -->
+
+<!-- Reference - https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/ -->
+
+- it is a node-based binary tree data structure which has the following properties
+
+a. The left subtree of a node contains only nodes with keys lesser than the node's key
+b. The right subtree of a node contains only nodes with keys greater than the node's key
+c. The left and right subtree each must also be a binary search tree. There must be no duplicate nodes
+
+https://imgur.com/a/dzXa2H0
+
+** The above properties of BST provide an ordering among keys so that the operations like search, minimum and maximum can be done fast.
+- If there is no ordering, then we may have to compare every key to search a given key
+
+<!-- Facts about BST -->
+
+- Inorder Traversal of BST always produces sorted output
