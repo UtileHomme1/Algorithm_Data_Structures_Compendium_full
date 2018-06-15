@@ -1,5 +1,7 @@
 // https://www.geeksforgeeks.org/converting-string-to-number-and-vice-versa-in-c/
 
+// https://ideone.com/eOQdKQ
+
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -23,3 +25,9 @@ int main()
 
     return 0;
 }
+
+/*
+
+string stream declares a stream object which first inserts a no. as a stream into object and then uses "str" function to follow internal conversion of the number to the string
+
+*/

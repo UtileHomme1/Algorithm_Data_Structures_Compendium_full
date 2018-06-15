@@ -21,3 +21,9 @@ int main()
   }
   return 0;
 }
+
+/*
+
+The "c_str" function is used to return a pointer to an array that contains a null terminated sequence of characters representing the current value of the string
+
+*/
