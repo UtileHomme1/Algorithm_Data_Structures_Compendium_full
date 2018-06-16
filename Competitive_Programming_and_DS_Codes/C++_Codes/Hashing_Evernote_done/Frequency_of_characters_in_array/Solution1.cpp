@@ -32,7 +32,7 @@ int main()
 
   for(int i=0;i<array_len;i++)
   {
-    cout<<i<<" "<<freq[i]<<endl;
+    cout<<char(i+'a')<<" "<<freq[i]<<endl;
   }
 
   return 0;

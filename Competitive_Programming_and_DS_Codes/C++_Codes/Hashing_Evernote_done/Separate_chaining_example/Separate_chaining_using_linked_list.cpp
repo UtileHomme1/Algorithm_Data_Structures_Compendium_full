@@ -90,7 +90,11 @@ int main()
     h.insertItem(a[i]);
   }
 
+  h.displayHash();
+
   h.deleteItem(12);
+
+  cout<<endl;
 
   h.displayHash();
 

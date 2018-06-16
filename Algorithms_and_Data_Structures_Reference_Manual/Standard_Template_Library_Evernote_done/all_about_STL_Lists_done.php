@@ -158,3 +158,109 @@ Parameters
 
 Return:
 - Number of elements in the container
+
+<!-- Front and back function in lists -->
+
+<!-- Reference - https://www.geeksforgeeks.org/listfront-and-listback-in-cpp-stl/ -->
+
+1. list::front()
+- is used to refer to the first element of the list container
+
+<!-- Syntax -->
+
+listname.front()
+
+Parameters :
+No value is needed to pass as the parameter.
+
+Returns :
+Direct reference to the first element of the list container.
+
+<!-- Eg -->
+
+Input  : list list{1, 2, 3, 4, 5};
+         list.front();
+Output : 1
+
+Input  : list list{0, 1, 2, 3, 4, 5};
+         list.front();
+Output : 0
+
+2. list::back()
+- is used to fetch the first element from the end of the list
+
+<!-- Syntax -->
+
+listname.back()
+
+Parameters :
+No value is needed to pass as the parameter.
+
+Returns :
+Direct reference to the last element of the list container.
+
+<!-- Eg -->
+
+Input  : list list{1, 2, 3, 4, 5};
+         list.back();
+Output : 5
+
+Input  : list list{1, 2, 3, 4, 5, 6};
+         list.back();
+Output : 6
+
+<!-- push_front and push_back function in lists -->
+
+<!-- Reference - https://www.geeksforgeeks.org/listpush_front-listpush_back-c-stl/ -->
+
+1. list::push_front()
+- is used to push elements into a list from the front
+- the new value is inserted into the list at the beginning, before the current first element and the container size is increased by 1
+
+<!-- Syntax -->
+
+listname.push_front(value)
+
+Parameters :
+The value to be added in the front is
+passed as the parameter
+
+Result :
+Adds the value mentioned as the parameter
+to the front of the list named as listname
+
+<!-- Eg -->
+
+Input : list list{1, 2, 3, 4, 5};
+        list.push_front(6);
+Output : 6, 1, 2, 3, 4, 5
+
+Input : list list{5, 4, 3, 2, 1};
+        list.push_front(6);
+Output :6, 5, 4, 3, 2, 1
+
+2. list::push_back()
+- is used to push elements into a list from the back
+- the new value is inserted into the list at the end, after the current last element and the container size is increased by 1
+
+<!-- Syntax -->
+
+listname.push_back(value)
+
+Parameters :
+The value to be added in the back is
+passed as the parameter
+
+Result :
+Adds the value mentioned as the parameter
+to the back of the list named as listname
+
+<!-- Eg -->
+
+Input : list list{1, 2, 3, 4, 5};
+        list.push_back(6);
+Output :1, 2, 3, 4, 5, 6
+
+Input : list list{5, 4, 3, 2, 1};
+        list.push_front(0);
+Output :5, 4, 3, 2, 1, 0
