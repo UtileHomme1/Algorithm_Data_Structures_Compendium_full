@@ -1,7 +1,6 @@
 // https://www.geeksforgeeks.org/reverse-a-linked-list/
 
 
-
 #include <iostream>
 
 using namespace std;

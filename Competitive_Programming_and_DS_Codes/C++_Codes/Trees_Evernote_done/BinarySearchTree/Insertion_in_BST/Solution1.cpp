@@ -20,6 +20,7 @@ Node *newnode(int data)
   Node *newnode = new Node;
   newnode->key = data;
   newnode->left = newnode->right = NULL;
+  return newnode;
 }
 
 Node *insert(Node *root, int data)

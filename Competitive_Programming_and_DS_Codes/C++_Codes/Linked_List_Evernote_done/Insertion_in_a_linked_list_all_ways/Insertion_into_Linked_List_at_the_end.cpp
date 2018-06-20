@@ -93,6 +93,9 @@ int main()
   InsertNode(head, 5);
 
   Insertend(&head,8);
+  Insertend(&head,9);
+  Insertend(&head,10);
+  Insertend(&head,11);
 
   printList(head);
   return 0;

@@ -54,7 +54,7 @@ void deleteNodeAtPos(Node **head, int pos)
     //finally return
     if(pos==0)
     {
-        *head==temp->next;
+        *head=temp->next;
         free(temp);
         return;
     }

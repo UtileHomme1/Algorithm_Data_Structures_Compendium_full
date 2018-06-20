@@ -27,7 +27,7 @@ int Nthnode(Node *head, int pos)
     Node *temp = head;
 
     int cnt = 0;
-    while(temp->next!=NULL)
+    while(temp!=NULL)
     {
         if(cnt==pos)
         {
@@ -37,6 +37,8 @@ int Nthnode(Node *head, int pos)
         cnt++;
         temp = temp->next;
     }
+
+    return 0;
 }
 
 int main()
@@ -50,7 +52,7 @@ int main()
     fpush(&head,2);
     fpush(&head,1);
 
-    int i = 3;
+    int i = 4;
     cout<<"The element at the position "<<i<<" is "<<Nthnode(head,i);
     return 0;
 }

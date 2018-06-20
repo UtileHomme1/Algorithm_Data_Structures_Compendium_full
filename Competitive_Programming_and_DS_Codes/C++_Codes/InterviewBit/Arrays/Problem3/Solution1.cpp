@@ -26,7 +26,7 @@ int main()
   vector <int> A {1,2,3,4,5};
 
   vector <int> B;
-  B = s.rotateArray(A, 7);
+  B = s.rotateArray(A, 2);
 
   for(int i=0;i<B.size();i++)
   {
