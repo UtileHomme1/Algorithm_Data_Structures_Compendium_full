@@ -527,6 +527,7 @@ Return value
 
 <!-- Reference - https://www.geeksforgeeks.org/strcat-vs-strncat-c/ -->
 
+1. strcat()
 - The strcat() function will append a copy of the source string to the end of the destination string
 
 - The strcat() takes two arguments
@@ -536,3 +537,39 @@ Return value
 
 - it will append a copy of the source string in the destination string
 - the terminating character at the end of dest is replaced by the first character of src
+
+2. strncat()
+- The strncat() function appends the given number of characters from one string to the end of another string
+
+- It takes three arguments
+
+1. dest
+2. src
+3. count
+
+- This will append the given number of characters from src string to the end of dest string.
+
+- The terminating character at the end of dest string will be replaced by the first character of src string .
+
+<!-- How strncat() is different from strcat() -->
+
+- strncat() is considered safe as compared to strcat() because strcat() does not check for the size of the copied data, and copies until it gets to a null terminator, it might cause a buffer overflow while strncat() check for the size of the copied data, and will copy only ‘n’ bytes.
+
+<!-- What is strpbrk() function -->
+
+<!-- Reference - https://www.geeksforgeeks.org/strpbrk-in-c/ -->
+
+- It finds the first character in the string "s1" that matches any character specified in "s2" (it excludes terminating null-characters)
+
+<!-- Syntax -->
+
+char *strpbrk(const char *s1, const char *s2)
+
+<!-- Parameters -->
+s1 : string to be scanned.
+s2 : string containing the characters to match.
+
+
+<!-- Return Value -->
+It returns a pointer to the character in s1 that
+matches one of the characters in s2, else returns NULL.

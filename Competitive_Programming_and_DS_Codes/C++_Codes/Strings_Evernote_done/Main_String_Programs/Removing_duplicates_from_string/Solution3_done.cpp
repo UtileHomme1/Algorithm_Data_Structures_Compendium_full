@@ -16,9 +16,9 @@ char *removeDuplicates(char *str, int n)
   while(*(str+i1))
   {
     char temp = *(str+i1);
-    if(hash[temp]==0)
+    if(hash[int(temp)]==0)
     {
-      hash[temp]=1;
+      hash[int(temp)]=1;
       str[i2] = str[i1];
       i2++;
     }

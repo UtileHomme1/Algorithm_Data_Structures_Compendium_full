@@ -17,7 +17,7 @@ int main()
     int len = str.length();
 
     //create a temporary char array for storing only the alphabets
-    char temp[4];
+    char temp[10];
 
     int i,k;
     int cnt=0;
@@ -33,6 +33,7 @@ int main()
             cnt++;
         }
     }
+
 
     //reversing the temporary array
     int start = 0, end=cnt-1;

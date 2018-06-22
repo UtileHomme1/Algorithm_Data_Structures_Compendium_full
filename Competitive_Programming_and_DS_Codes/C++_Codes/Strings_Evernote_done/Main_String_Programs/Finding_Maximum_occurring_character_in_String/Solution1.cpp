@@ -17,7 +17,7 @@ char getMaxChar(char *str)
     {
         //here, the characters are being passed as an index of the count array
         //every index holds the total count of the number of the times that character has occurred
-        count[str[i]]++;
+        count[int(str[i])]++;
     }
 
     //presently all characters with their counts have been accounted for
@@ -28,9 +28,9 @@ char getMaxChar(char *str)
     for(int j=0;j<len;j++)
     {
         //if the current count of the given character is more than the " present max" value, make that count the max value
-        if(count[str[j]]>max)
+        if(count[int(str[j])]>max)
         {
-            max=count[str[j]];
+            max=count[int(str[j])];
             //update result with the current character with max value
             result = str[j];
         }

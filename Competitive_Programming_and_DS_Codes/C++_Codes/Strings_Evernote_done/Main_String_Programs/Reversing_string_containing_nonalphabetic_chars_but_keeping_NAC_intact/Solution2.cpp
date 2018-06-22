@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void reverse(char s[])
+void reverse(char *s)
 {
     int len = strlen(s);
     int l = 0;

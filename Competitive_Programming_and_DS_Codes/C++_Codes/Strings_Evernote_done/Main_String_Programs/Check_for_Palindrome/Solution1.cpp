@@ -6,10 +6,10 @@
 
 using namespace std;
 
-bool checkPalindrome(char a[])
+bool checkPalindrome(char a[], int len)
 {
     int start = 0;
-    int end = strlen(a)-1;
+    int end = len-1;
     while(start<end)
     {
         if(a[start]==a[end])
@@ -19,7 +19,6 @@ bool checkPalindrome(char a[])
         }
         else
         {
-            cout<<"hello";
             return false;
         }
     }
@@ -29,11 +28,10 @@ bool checkPalindrome(char a[])
 
 int main()
 {
-    char a[] = "naman";
+    char a[] = "namana";
 
     int len = strlen(a);
-    int output = checkPalindrome(a);
-    cout<<output<<endl;
+    int output = checkPalindrome(a,len);
     if(output==0)
     {
         cout<<"Not a palindrome";
