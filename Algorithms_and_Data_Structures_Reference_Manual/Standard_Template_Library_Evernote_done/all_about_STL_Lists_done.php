@@ -264,3 +264,59 @@ Output :1, 2, 3, 4, 5, 6
 Input : list list{5, 4, 3, 2, 1};
         list.push_front(0);
 Output :5, 4, 3, 2, 1, 0
+
+<!-- pop_front() and pop_back() functions in STL -->
+
+<!-- Reference - https://www.geeksforgeeks.org/listpop_front-listpop_back-c-stl/ -->
+
+1. pop_front()
+
+- is used to pop or remove elements from a list from the front
+- the value is removed from the list from the beginning and the container size is decreased by 1
+
+<!-- Syntax:  -->
+
+listname.pop_front()
+
+<!-- Parameters: -->
+- No argument is passed as parameter
+
+<!-- Result: -->
+- Removes the value present at the front of the given list named as listname
+
+<!-- Eg -->
+
+Input :  list list{1, 2, 3, 4, 5};
+         list.pop_front();
+Output : 2, 3, 4, 5
+
+Input :  list list{5, 4, 3, 2, 1};
+         list.pop_front();
+Output : 4, 3, 2, 1
+
+2. pop_back()
+
+- is used to pop or remove elements from a list from the back
+
+<!-- Syntax : -->
+
+listname.pop_back()
+
+<!-- Parameters : -->
+
+No argument is passed as parameter.
+
+<!-- Result : -->
+
+Removes the value present at the end or back
+of the given list named as listname
+
+<!-- Eg -->
+
+Input :  list list{1, 2, 3, 4, 5};
+         list.pop_back();
+Output : 1, 2, 3, 4
+
+Input :  list list{5, 4, 3, 2, 1};
+         list.pop_back();
+Output : 5, 4, 3, 2

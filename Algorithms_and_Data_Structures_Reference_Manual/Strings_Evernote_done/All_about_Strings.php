@@ -1,4 +1,4 @@
-<!-- done -->
+
 
 <!-- What are Strings and how are they defined in C++ -->
 <!-- Reference - https://www.geeksforgeeks.org/stdstring-class-in-c/ -->
@@ -573,3 +573,56 @@ s2 : string containing the characters to match.
 <!-- Return Value -->
 It returns a pointer to the character in s1 that
 matches one of the characters in s2, else returns NULL.
+
+<!-- What is strcoll() function -->
+
+<!-- Reference - https://www.geeksforgeeks.org/strcoll-in-cc/ -->
+
+- it is present in "string.h" header file
+
+- compares the string pointed to by str1 with the one pointed by str2
+
+<!-- Syntax: -->
+
+int strcoll(const char *str1, const char *str2)
+function srtcoll() takes two strings as parameters
+and returns an integer value.
+
+Value                   Meaning
+less than zero          str1 is less than str2
+zero                    str1 is equal to str2
+greater than zero       str1 is greater than str2
+
+<!-- What is the substring function -->
+
+<!-- Reference - https://www.geeksforgeeks.org/substring-in-cpp/ -->
+
+- "string.h" is the header file
+
+- This function takes two values pos and len as an argument and returns a newly constructed string object with its value initialized to a copy of a sub-string of this object
+
+- Copying of string start from pos and done till pos+len means [pos, pos+len)
+
+<!-- Important Points -->
+
+1. The index of the first character is 0 (not 1)
+
+2. If pos is equal to the string length, the function returns an empty string.
+
+3. If pos is greater than the string length, it throws out_of_range. If this happen, there are no changes in the string.
+
+4. If for the requested sub-string len is greater than size of string, then returned sub-string is [pos, size()).
+
+<!-- Syntax: -->
+
+string substr (size_t pos, size_t len) const;
+
+<!-- Parameters: -->
+
+pos: Position of the first character to be copied.
+len: Length of the sub-string.
+size_t: It is an unsigned integral type.
+
+<!-- Return value:  -->
+
+It returns a string object.
