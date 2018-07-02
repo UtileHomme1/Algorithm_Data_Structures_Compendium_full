@@ -2,7 +2,7 @@
 
 // Reference - https://www.youtube.com/watch?v=lBk6fVhuCyw
 
-// https://ideone.com/Allsyb
+// https://ideone.com/AV0ojM
 
 #include <iostream>
 
@@ -12,7 +12,7 @@ int FindMissingNumber(int a[], int n)
 {
   int i;
   int x1=a[0];
-  int x2 = 2;
+  int x2 = 1;
 
 
   for(i=1;i<n;i++)
