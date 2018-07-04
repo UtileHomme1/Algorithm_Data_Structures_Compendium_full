@@ -1,3 +1,6 @@
+// https://www.interviewbit.com/problems/binary-representation/
+
+
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -26,7 +29,7 @@ int main()
 
   Solution s;
 
-  int n = 13;
+  int n = 22;
 
   string k = s.decimaltobinary(n);
 

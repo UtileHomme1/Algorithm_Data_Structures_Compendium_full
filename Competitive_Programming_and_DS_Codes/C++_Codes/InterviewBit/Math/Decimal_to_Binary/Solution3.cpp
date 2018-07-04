@@ -1,3 +1,6 @@
+// https://www.interviewbit.com/problems/binary-representation/
+
+
 #include <iostream>
 #include <algorithm>
 #include <string>

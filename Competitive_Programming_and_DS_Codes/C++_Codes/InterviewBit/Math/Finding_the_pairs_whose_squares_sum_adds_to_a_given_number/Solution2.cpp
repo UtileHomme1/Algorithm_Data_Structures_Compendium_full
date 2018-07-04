@@ -1,3 +1,6 @@
+// https://www.interviewbit.com/problems/mathbug02/
+
+
 #include <iostream>
 #include <vector>
 
@@ -17,9 +20,9 @@ public:
 
     for(int a=1; (a*a)<A; a++)
     {
-      for(int b=a; (b*b)<A;b++)
+      for(int b=1; (b*b)<A;b++)
       {
-        if(((a*a)+(b*b))==A)
+        if(((a*a)+(b*b))==A && a<=b)
         {
           vector <int> newentry;
           newentry.push_back(a);

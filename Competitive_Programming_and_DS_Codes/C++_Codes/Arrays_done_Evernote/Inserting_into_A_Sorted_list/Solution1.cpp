@@ -44,8 +44,6 @@ int main()
 
 	n = SortedInsert(a,n,capacity,k);
 
-	cout<<n<<endl;
-
 	for(int i=0;i<n;i++)
 	{
 		cout<<a[i]<<endl;

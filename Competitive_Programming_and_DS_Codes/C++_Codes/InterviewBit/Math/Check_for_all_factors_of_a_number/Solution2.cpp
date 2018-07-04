@@ -1,8 +1,5 @@
 // https://www.interviewbit.com/problems/all-factors/
 
-
-// https://ideone.com/cJJTko
-
 #include <iostream>
 #include <vector>
 #include <bits/stdc++.h>
@@ -16,18 +13,12 @@ public:
   vector<int> allFActors(int A)
   {
     vector <int> k;
-      for(int i=1;i<=sqrt(A);i++)
+      for(int i=1;i<=(A);i++)
       {
-
-          if(A%i==0)
-          {
-              k.push_back(i);
-
-              if(A!=1 && i!=sqrt(A))
-              {
-              k.push_back(A/i);
-              }
-          }
+        if(A%i==0)
+        {
+          k.push_back(i);
+        }
       }
 
       sort(k.begin(),k.end());

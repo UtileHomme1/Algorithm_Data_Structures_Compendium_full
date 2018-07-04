@@ -1,3 +1,5 @@
+// https://www.interviewbit.com/problems/verify-prime/
+
 #include <iostream>
 #include <math.h>
 
@@ -39,7 +41,7 @@ public:
 int main()
 {
   Solution s;
-  int a = 3467;
+  int a = 17;
 
   int b = s.isPrime(a);
   cout<<b;
