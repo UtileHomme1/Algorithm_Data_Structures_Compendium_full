@@ -10,7 +10,7 @@ using namespace std;
 class Solution
 {
 public:
-  string decimaltobinary(int A)
+  void decimaltobinary(int A)
   {
     string s="";
 
@@ -20,7 +20,6 @@ public:
       cout<<to_string(A%2);
     }
 
-    return s;
   }
 };
 
@@ -31,9 +30,8 @@ int main()
 
   int n = 22;
 
-  string k = s.decimaltobinary(n);
+  s.decimaltobinary(n);
 
-  cout<<k;
 
   return 0;
 }
