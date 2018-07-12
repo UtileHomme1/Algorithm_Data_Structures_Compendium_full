@@ -1,7 +1,5 @@
 // http://www.geeksforgeeks.org/find-the-number-occurring-odd-number-of-times/
 
-// https://ideone.com/R57NZi
-
 //Hashing Method
 
 #include <map>
@@ -22,12 +20,15 @@ for(int i=0;i<n;i++)
   if(m1.find(a[i])!=m1.end())
   {
     int freq = m1.find(a[i])->second;
-    m1.insert(pair <int, int> (a[i], freq+1));
+    i1 = m1.find(a[i]);
+    i1->second = freq + 1;
   }
   else
   {
     m1.insert(pair <int, int> (a[i], 1));
   }
+    }
+
 
   for(i1 = m1.begin(); i1!=m1.end(); i1++)
   {
@@ -36,14 +37,14 @@ for(int i=0;i<n;i++)
       return i1->first;
     }
   }
-}
+
 
 return -1;
 }
 
 int main()
 {
-  int a[] = {2,5,3,4,3,2,5,2,4};
+  int a[] = {2,5,3,4,3,5,5,2,4};
 
   int len = sizeof(a)/sizeof(a[0]);
 
