@@ -120,3 +120,20 @@ Output = 30
 // Invalid because z has default value, but w after it
 // doesn't have default value
 int sum(int x, int y, int z=0, int w)
+
+<!-- Returning multiple values from a function using Tuple and Pair -->
+
+<!-- Reference - https://www.geeksforgeeks.org/returning-multiple-values-from-a-function-using-tuple-and-pair-in-c/ -->
+
+- We can declare the function with return type as pair or tuple and can pack the values to be returned and return the packed set of values.
+- The returned values can be unpacked in the calling function
+
+<!-- Tuple -->
+
+- is an object capable to hold a collection of elements where each element can be of different type
+
+<!-- Pair -->
+
+- couples together a pair of values, which may be of different types
+
+** Tuple can also be used to return two values instead of using pair
