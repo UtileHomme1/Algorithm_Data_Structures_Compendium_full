@@ -13,7 +13,6 @@
 
 <!-- Reference -  https://www.geeksforgeeks.org/dequeempty-dequesize-c-stl/ -->
 
-
 1. empty()
 - is used to check if the deque container is empty or not
 
@@ -63,3 +62,43 @@ Output :  3
 Input :   mydeque = 0, 1, 2, 3, 4, 5
           mydeque.size();
 Output :  6
+
+<!-- front and back function in deque -->
+
+<!-- https://www.geeksforgeeks.org/dequefront-dequeback-c-stl/ -->
+
+1. front()
+- used to reference the first element of the deque container
+- can be used to fetch the first element of a deque
+
+<!-- Syntax -->
+
+dequename.front()
+
+<!-- Examples -->
+
+Input  :  mydeque = 1, 2, 3
+          mydeque.front();
+Output :  1
+
+Input  :  mydeque = 3, 4, 1, 7, 3
+          mydeque.front();
+Output :  3
+
+2. back()
+- used to reference the last element of the deque container
+- can be used to fetch the first element from the back of the queue
+
+<!-- Syntax -->
+
+dequename.back()
+
+<!-- Examples -->
+
+Input  :  mydeque = 1, 2, 3
+          mydeque.back();
+Output :  3
+
+Input  :  mydeque = 3, 4, 1, 7, 3
+          mydeque.back();
+Output :  3
