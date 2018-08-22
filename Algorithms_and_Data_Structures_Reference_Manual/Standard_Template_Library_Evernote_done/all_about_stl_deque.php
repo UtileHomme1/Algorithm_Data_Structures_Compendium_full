@@ -102,3 +102,63 @@ Output :  3
 Input  :  mydeque = 3, 4, 1, 7, 3
           mydeque.back();
 Output :  3
+
+<!-- clear and erase functions -->
+
+<!-- https://www.geeksforgeeks.org/dequeclear-dequeerase-c-stl/ -->
+
+1. clear()
+
+- used to remove all the elements of the deque container
+
+<!-- Syntax -->
+
+dequename.clear()
+
+<!-- Parameters : -->
+
+No parameters are passed.
+
+<!-- Result : -->
+
+All the elements of the deque are
+removed ( or destroyed )
+
+<!-- Example -->
+
+Input  : mydeque = {1, 2, 3, 4, 5}
+         mydeque.clear();
+Output : mydeque = {}
+
+Input  : mydeque = {}
+         mydeque.clear();
+Output : mydeque = {}
+
+2. erase()
+
+- is used to remove elements from a container from the specified position or range
+
+<!-- Syntax -->
+
+1. dequename.erase(position)
+2. dequename.erase(startingposition, endingposition)
+
+<!-- Parameters : -->
+
+Position of the element to be removed in the form of iterator.
+or the range specified using start and end iterator.
+
+<!-- Result : -->
+
+Elements are removed from the specified
+position of the container.
+
+<!-- Examples -->
+
+Input  : mydeque{1, 2, 3, 4, 5}, iterator= 2
+         mydeque.erase(iterator);
+Output : 1, 2, 4, 5
+
+Input  : mydeque{1, 2, 3, 4, 5, 6, 7, 8}, iterator1= 3, iterator2= 6
+         mydeque.erase(iterator1, iterator2);
+Output : 1, 2, 3, 8

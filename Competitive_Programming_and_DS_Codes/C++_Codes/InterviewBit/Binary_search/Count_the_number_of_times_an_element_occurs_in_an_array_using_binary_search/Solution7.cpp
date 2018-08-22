@@ -37,38 +37,28 @@ public:
 
   int findCount(const vector <int> &A, int B)
   {
-    int low = 0;
-    int high = A.size() - 1;
+    int pos = binarySearch(A, 0, A.size(), B);
 
-    int n = A.size();
-
-    int index = binarySearch(A, low, high, B);
-
-    if(index==-1)
+    if(pos==-1)
     {
       return 0;
     }
-
-    //count elements on the left side of the returned index value
-    int cnt = 1;
-    int left = index - 1;
-
-    while(left>=0 && A[left] == B)
+    else
     {
-      cnt++;
-      left--;
+      int i=pos-1, j=pos+1;
+
+      //count the number of occurences from both sides of mid
+      while(i>-1 && A[i]==A[pos])
+      {
+        i--;
+      }
+      while(j<A.size() && A[j]==A[pos])
+      {
+        j++;
+      }
+
+      return j-i-1;
     }
-
-    //count elements on the right side of the returned index value
-    int right = index + 1;
-
-    while(right<n && A[right]==B)
-    {
-      cnt++;
-      right++;
-    }
-
-    return cnt;
   }
 };
 
@@ -78,7 +68,7 @@ int main()
 {
   vector <int> A = {1,2,5,5,5,5,6,7,8,9,9};
 
-  int k = 5;
+  int k = 2;
 
   Solution s;
 
@@ -88,4 +78,4 @@ int main()
   return 0;
 }
 
-// Time Complexity = O(logn + count)
+// Time Complexity = O(logn)
