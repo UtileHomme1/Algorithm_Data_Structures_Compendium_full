@@ -78,3 +78,126 @@
 
 17. empty()
 - returns true if the list is empty otherwise false
+
+<!-- front and empty function -->
+
+<!-- https://www.geeksforgeeks.org/forward_listfront-forward_listempty-c-stl/ -->
+
+1. front()
+- is used to reference the first element of the forward list container
+
+Syntax :
+
+forwardlistname.front()
+
+Parameters :
+
+No value is needed to pass as the parameter.
+
+Returns :
+
+Direct reference to the first element of the container.
+
+Examples:
+
+Input  : forward_list forwardlist{1, 2, 3, 4, 5};
+         forwardlist.front();
+
+Output : 1
+
+Input  : forward_list forwardlist{0, 1, 2, 3, 4, 5};
+         forwardlist.front();
+
+Output : 0
+
+Eg -
+
+#include <forward_list>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    forward_list<int> myforwardlist{ 1, 2, 3, 4, 5 };
+    cout << myforwardlist.front();
+    return 0;
+}
+
+Output
+
+1
+
+2. empty()
+
+- is used to check if the forward list container is empty or not
+
+Syntax :
+
+forwardlistname.empty()
+
+Parameters :
+
+No parameters are passed.
+
+Returns :
+
+True, if list is empty
+False, Otherwise
+
+Examples:
+
+Input  : forward_list forwardlist{1, 2, 3, 4, 5};
+         forwardlist.empty();
+
+Output : False
+
+Input  : forward_list forwardlist{};
+         forwardlist.empty();
+
+Output : True
+
+Eg-
+
+#include <forward_list>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    forward_list<int> myforwardlist{};
+    if (myforwardlist.empty()) {
+        cout << "True";
+    }
+    else {
+        cout << "False";
+    }
+    return 0;
+}
+
+Output
+
+True
+
+Application of front and empty
+
+Q. Given a list of integers, find the sum of the all the integers.
+
+#include <forward_list>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int sum = 0;
+    forward_list<int> myforwardlist{ 1, 5, 6, 3, 9, 2 };
+    while (!myforwardlist.empty()) {
+        sum = sum + myforwardlist.front();
+        myforwardlist.pop_front();
+    }
+    cout << sum;
+    return 0;
+}
+
+Output
+
+26
