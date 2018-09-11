@@ -11,23 +11,23 @@ using namespace std;
 int getOddOccurrence(int a[], int n)
 {
 
-map <int, int> m1;
+  map <int, int> m1;
 
-map <int, int>::iterator i1;
+  map <int, int>::iterator i1;
 
-for(int i=0;i<n;i++)
-{
-  if(m1.find(a[i])!=m1.end())
+  for(int i=0;i<n;i++)
   {
-    int freq = m1.find(a[i])->second;
-    i1 = m1.find(a[i]);
-    i1->second = freq + 1;
-  }
-  else
-  {
-    m1.insert(pair <int, int> (a[i], 1));
-  }
+    if(m1.find(a[i])!=m1.end())
+    {
+      int freq = m1.find(a[i])->second;
+      i1 = m1.find(a[i]);
+      i1->second = freq + 1;
     }
+    else
+    {
+      m1.insert(pair <int, int> (a[i], 1));
+    }
+  }
 
 
   for(i1 = m1.begin(); i1!=m1.end(); i1++)
@@ -39,7 +39,7 @@ for(int i=0;i<n;i++)
   }
 
 
-return -1;
+  return -1;
 }
 
 int main()
