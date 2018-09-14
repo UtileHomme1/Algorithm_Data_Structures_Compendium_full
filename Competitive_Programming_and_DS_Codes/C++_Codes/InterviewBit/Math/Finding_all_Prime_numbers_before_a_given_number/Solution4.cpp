@@ -1,8 +1,11 @@
 // https://www.interviewbit.com/problems/prime-numbers/
 
+// https://www.geeksforgeeks.org/?p=22295
+
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -12,37 +15,33 @@ public:
   vector<int> sieve(int &A)
   {
 
-    int Prime[A+1];
+    bool Prime[A+1];
 
     vector <int> B;
 
-    for(int i=0;i<=A;i++)
+    for(int i=0;i<sizeof(Prime);i++)
     {
-      Prime[i] = 1;
-      Prime[0] = 0;
-      Prime[1] = 0;
+      Prime[i]=true;
     }
 
-
-    for(int i=2;i<=sqrt(A);i++)
+    for(int i=2; i*i<=A; i++)
     {
-      if(Prime[i]==1)
+      if(Prime[i]==true)
       {
-        for(int j=2*i;j<=A;j=j+i)
+        for(int j= i*2; j<=A; j = j + i)
         {
-          Prime[j]=0;
+          Prime[j] = false;
         }
       }
     }
 
-    for(int i=0;i<=A;i++)
+    for(int i=2;i<=A;i++)
     {
       if(Prime[i]==1)
       {
         B.push_back(i);
       }
     }
-
 
     return B;
   }
