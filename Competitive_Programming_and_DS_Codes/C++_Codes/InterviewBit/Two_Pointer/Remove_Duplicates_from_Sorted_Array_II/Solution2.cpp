@@ -1,3 +1,5 @@
+// https://www.interviewbit.com/problems/remove-duplicates-from-sorted-array-ii/
+
 #include <iostream>
 #include <vector>
 #include <bits/stdc++.h>
@@ -18,25 +20,32 @@ public:
       return A.size();
     }
 
-    int count=0;
+    int n = A.size();
 
-    int size = A.size();
+    int count = 1;
+    int len = 1;
 
-    //if any set has more than two same elements we only take the last two occurences
-    for(int i=0;i<size;i++)
+    int prev = A[0];
+
+    for(int i=1;i<n;i++)
     {
-      if(i<size-2 && A[i]==A[i+1] && A[i]==A[i+2])
+      if(A[i]!=prev)
       {
-        continue;
+        A[len]=A[i];
+        len++;
+        prev = A[i];
+        count = 1;
       }
-      else
+
+      else if(count<2)
       {
-        A[count]= A[i];
+        A[len]=A[i];
+        len++;
         count++;
       }
     }
 
-    return count;
+    return len;
   }
 
 };
