@@ -9,9 +9,9 @@ using namespace std;
 class Solution
 {
 public:
-  vector <vector<int>> threeSumZero(vector <int> &A)
+  vector <vector<int> > threeSumZero(vector <int> &A)
   {
-    vector <vector <int>> B;
+    vector <vector <int> > B;
 
     if(A.size()<2)
     {
@@ -113,7 +113,7 @@ int main()
 
   Solution s;
 
-  vector <vector <int>> B = s.threeSumZero(A);
+  vector <vector <int> > B = s.threeSumZero(A);
 
   for(int i=0;i<B.size();i++)
   {

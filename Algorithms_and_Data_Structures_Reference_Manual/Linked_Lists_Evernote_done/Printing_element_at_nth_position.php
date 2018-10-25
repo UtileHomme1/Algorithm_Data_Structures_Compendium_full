@@ -7,7 +7,7 @@
 - else, we keep on traversing the linked list until the index is reached
 
 // Code
-https://ideone.com/nW96zh
+// https://ideone.com/nW96zh
 
 // Time Complexity
 O(n)
