@@ -80,7 +80,7 @@ int main()
 
   Solution s;
 
-  vector <vector <int>> B = s.threeSumZero(A);
+  vector <vector <int> > B = s.threeSumZero(A);
 
   for(int i=0;i<B.size();i++)
   {
