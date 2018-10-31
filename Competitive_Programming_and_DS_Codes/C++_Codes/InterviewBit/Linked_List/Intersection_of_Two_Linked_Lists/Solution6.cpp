@@ -2,6 +2,8 @@
 
 // https: //www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/
 
+// This will only check whether an intersection happened or not
+
 #include <iostream>
 #include <bits/stdc++.h>
 
@@ -26,31 +28,27 @@ class Solution
         }
     }
 
-    Node * getIntersectionNode(Node *A, Node *B)
+    bool getIntersectionNode(Node *A, Node *B)
     {
-        Node *pA = A; 
-        Node * pB = B;
+        Node *lastA = A; 
+        Node * lastB = B;
 
-        //for storing all address Nodes in a hash
-        set <Node *> k;
-
-        while(pA!=NULL)
+        while(lastA->next!=NULL)
         {
-            k.insert(pA);
-            pA = pA->next;
+            lastA = lastA->next;
         }
 
-        while(pB!=NULL)
+        while(lastB->next!=NULL)
         {
-            if(k.find(pB)!=k.end())
-            {
-                return pB;
-            }
-
-            pB = pB->next;
+            lastB = lastB->next;
         }
 
-    return NULL;
+        if(lastA==lastB)
+        {
+            return 1;
+        }
+
+    return 0;
     }
 };
 
@@ -93,12 +91,18 @@ int main()
     cout<<endl;
     s.printList(B);
 
-    Node * C = s.getIntersectionNode(A,B);
+    cout << endl;
 
-    
-    
-    cout<<endl;
-    s.printList(C);
+    bool k = s.getIntersectionNode(A,B);
+
+    if(k)
+    {
+        cout<<"Intersection exists";
+    }
+    else 
+    {
+        cout<<"No intersection";
+    }
 
     return 0;
 }
