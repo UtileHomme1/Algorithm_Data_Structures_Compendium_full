@@ -26,16 +26,24 @@ bool LoopDetection(Node *head)
   Node *one_ptr = head;
   Node *two_ptr = head;
 
+  int cnt=0;
+
   while(one_ptr!=NULL && two_ptr!=NULL && two_ptr->next!=NULL)
   {
     one_ptr = one_ptr->next;
     two_ptr = two_ptr->next->next;
 
+    cnt++;
+
     if(one_ptr==two_ptr)
     {
+      cout << cnt << endl;
+      
       return true;
     }
   }
+
+  cout<<cnt<<endl;
 
   return false;
 }
