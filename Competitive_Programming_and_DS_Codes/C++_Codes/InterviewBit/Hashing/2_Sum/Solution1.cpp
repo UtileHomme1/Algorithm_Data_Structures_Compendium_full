@@ -41,7 +41,7 @@ class Solution
 
 int main()
 {
-    vector<int> A = {1, 4, 45, 6, 10, -8};
+    vector <int> A = {1, 4, 45, 6, 10, -8};
 
     int k = 49;
 
