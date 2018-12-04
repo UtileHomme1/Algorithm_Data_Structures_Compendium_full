@@ -9,7 +9,7 @@ int partition(int a[], int low, int high)
     //
     int i = low+1;
 
-    //pivot is the last element of the current array/subarray
+    //pivot is the first element of the current array/subarray
     int pivot = a[low];
 
     //we run the loop from the element just after the pivot element to the end of the current subarray
