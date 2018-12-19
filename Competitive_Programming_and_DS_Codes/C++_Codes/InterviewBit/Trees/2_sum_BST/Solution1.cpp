@@ -65,7 +65,7 @@ int main()
     root->right = newNode(9);
     root->left->left = newNode(1);
     root->left->right = newNode(5);
-    root->right->left = newNode(10);
+    root->right->left = newNode(8);
 
     int k = twoSumBST(root, 33);
 
