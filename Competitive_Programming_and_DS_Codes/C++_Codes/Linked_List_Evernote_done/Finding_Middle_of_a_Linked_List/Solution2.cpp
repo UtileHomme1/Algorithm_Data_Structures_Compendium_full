@@ -40,7 +40,6 @@ void MiddleofLL(Node *head)
 int main()
 {
   Node *head = NULL;
-  fpush(&head, 1);
   fpush(&head, 3);
   fpush(&head, 6);
   fpush(&head, 2);
