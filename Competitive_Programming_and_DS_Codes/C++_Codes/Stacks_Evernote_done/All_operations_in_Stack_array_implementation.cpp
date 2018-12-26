@@ -12,7 +12,7 @@ class Stack
     int top;
 
     //functions and variables with "public" visibility
-    public:
+  public:
     int a[MAX];
 
     //constructor for instantiation and assignment of values to some variables when the object is created
@@ -25,23 +25,23 @@ class Stack
     int pop();
     bool isEmpty();
     void printStack();
-
 };
 
 void Stack::printStack()
 {
-    for(int i=top;i>=0;i--)
+    for (int i = top; i >= 0; i--)
     {
-        cout<<a[i]<<endl;
+        cout << a[i] << endl;
     }
 }
+
 bool Stack::push(int x)
 {
 
     //if the value of "top" is more than the allowed index value for array
-    if(top>=MAX-1)
+    if (top >= MAX - 1)
     {
-        cout<<"Stack overflow";
+        cout << "Stack overflow";
         return false;
     }
 
@@ -56,9 +56,9 @@ bool Stack::push(int x)
 
 int Stack::pop()
 {
-    if(top<0)
+    if (top < 0)
     {
-        cout<<"Stack underflow";
+        cout << "Stack underflow";
         return 0;
     }
     else
@@ -72,7 +72,7 @@ int Stack::pop()
 bool Stack::isEmpty()
 {
     //if "top"<0, this will return true else return false
-    return (top<0);
+    return (top < 0);
 }
 
 int main()
@@ -82,12 +82,12 @@ int main()
     s.push(20);
     s.push(30);
 
-    cout<<"Elements in stack"<<endl;
+    cout << "Elements in stack" << endl;
     s.printStack();
 
-    cout<<s.pop()<<" Popped from the stack"<<endl;
+    cout << s.pop() << " Popped from the stack" << endl;
 
-    cout<<"Elements in stack"<<endl;
+    cout << "Elements in stack" << endl;
     s.printStack();
 
     return 0;

@@ -10,7 +10,7 @@ struct Node
     Node *next;
 };
 
-void push(Node **head,int data)
+void push(Node **head, int data)
 {
     Node *node = new Node;
     node->data = data;
@@ -18,14 +18,14 @@ void push(Node **head,int data)
 
     node->next = *head;
     *head = node;
-    cout<<data<<" pushed to stack"<<endl;
+    cout << data << " pushed to stack" << endl;
 }
 
 int pop(Node **head)
 {
-    if(*head==NULL)
+    if (*head == NULL)
     {
-        cout<<"The number of elements in the stack are ";
+        cout << "The number of elements in the stack are ";
         return 0;
     }
     Node *temp = *head;
@@ -38,31 +38,30 @@ int pop(Node **head)
 
 void showStack(Node *head)
 {
-    cout<<endl;
-    cout<<"The stack looks like"<<endl;
-    while(head!=NULL)
+    cout << endl;
+    cout << "The stack looks like" << endl;
+    while (head != NULL)
     {
-        cout<<head->data<<endl;
+        cout << head->data << endl;
         head = head->next;
     }
 }
-
 
 int main()
 {
     Node *head = NULL;
 
-    cout<<pop(&head)<<endl;
+    cout << pop(&head) << endl;
 
-    push(&head,1);
-    push(&head,2);
-    push(&head,3);
+    push(&head, 1);
+    push(&head, 2);
+    push(&head, 3);
 
     showStack(head);
 
-    cout<<endl;
+    cout << endl;
 
-    cout<<pop(&head)<<" has been removed from the stack"<<endl;
+    cout << pop(&head) << " has been removed from the stack" << endl;
 
     showStack(head);
 
