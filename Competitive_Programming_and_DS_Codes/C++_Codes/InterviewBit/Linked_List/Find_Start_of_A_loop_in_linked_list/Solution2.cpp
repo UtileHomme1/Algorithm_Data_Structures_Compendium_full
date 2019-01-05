@@ -1,5 +1,7 @@
 // https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/
 
+// https://www.geeksforgeeks.org/find-first-node-of-loop-in-a-linked-list/
+
 // https : //www.interviewbit.com/problems/list-cycle/
 
 #include <iostream>
@@ -26,7 +28,7 @@ void fpush(Node **head, int newdata)
 
 Node *StartOfLoop(Node *head)
 {
-   set <Node *> s; 
+   set <Node *> s;
 
     //keep entering the address into the "set" until the address is found again.
     //if the address is encountered again that means the loop exists and the current address being traversed is returned
@@ -65,7 +67,7 @@ int main()
     {
         cout<<head->data;
     }
-    else 
+    else
     {
         cout<<"No loop exists";
     }

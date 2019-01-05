@@ -1,5 +1,7 @@
 // https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/
 
+// https://www.geeksforgeeks.org/find-first-node-of-loop-in-a-linked-list/
+
 // https : //www.interviewbit.com/problems/list-cycle/
 
 #include <iostream>

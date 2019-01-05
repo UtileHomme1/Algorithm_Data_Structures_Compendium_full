@@ -1,12 +1,8 @@
-// https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/
-
-// https://www.geeksforgeeks.org/find-first-node-of-loop-in-a-linked-list/
-
-// https : //www.interviewbit.com/problems/list-cycle/
+// https://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/
 
 #include <iostream>
 
-        using namespace std;
+using namespace std;
 
 struct Node
 {
@@ -25,7 +21,17 @@ void fpush(Node **head, int newdata)
     *head = newnode;
 }
 
-Node *StartOfLoop(Node *head)
+void printList(Node *head)
+{
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+}
+
+void detectAndRemoveLoop(Node *head)
 {
     Node *one_ptr = head;
     Node *two_ptr = head;
@@ -40,26 +46,22 @@ Node *StartOfLoop(Node *head)
         //helps find the first meeting point
         if (one_ptr == two_ptr)
         {
-
             break;
         }
     }
 
-    if (one_ptr == NULL || two_ptr == NULL)
+    if (one_ptr == two_ptr)
     {
-        return NULL;
+        one_ptr = head;
+
+        while (one_ptr->next != two_ptr->next)
+        {
+            one_ptr = one_ptr->next;
+            two_ptr = two_ptr->next;
+        }
+
+        two_ptr->next = NULL;
     }
-
-    Node *curr = head;
-
-    //helps find the start of the loop
-    while (curr != one_ptr)
-    {
-        curr = curr->next;
-        one_ptr = one_ptr->next;
-    }
-
-    return curr;
 }
 
 int main()
@@ -76,16 +78,9 @@ int main()
 
     head->next->next->next->next->next->next->next->next = head->next->next->next;
 
-    head = StartOfLoop(head);
+    detectAndRemoveLoop(head);
 
-    if(head!=NULL)
-    {
-        cout<<head->data;
-    }
-    else
-    {
-        cout<<"No loop exists";
-    }
+    printList(head);
 
     return 0;
 }
