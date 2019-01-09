@@ -8,11 +8,12 @@ using namespace std;
 
 int oddElement(int a[], int size)
 {
-    int count = 0;
-
     //compare the first loop element with all the elements in the second loop
     for(int i=0;i<size;i++)
     {
+
+        int count = 0;
+
         for(int j=0;j<size;j++)
         {
             //whenever the element is equal to another, increment the count by 1
