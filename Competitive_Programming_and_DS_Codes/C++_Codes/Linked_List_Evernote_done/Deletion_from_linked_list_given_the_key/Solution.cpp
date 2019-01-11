@@ -44,7 +44,7 @@ void deleteNode(Node **head, int key)
 
     // if the key is found at the head node itself, then reassign the "head" to the address of the next node and make that the new "head"
     //also free the memory of "temp" which contained the original "head"
-    while(temp!=NULL && temp->data==key)
+    if(temp!=NULL && temp->data==key)
     {
         *head = temp->next;
         free(temp);

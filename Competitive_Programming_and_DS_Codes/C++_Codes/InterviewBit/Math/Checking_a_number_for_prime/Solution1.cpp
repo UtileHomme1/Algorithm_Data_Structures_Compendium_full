@@ -41,7 +41,7 @@ public:
 int main()
 {
   Solution s;
-  int a = 17;
+  int a = 3;
 
   int b = s.isPrime(a);
   cout<<b;
