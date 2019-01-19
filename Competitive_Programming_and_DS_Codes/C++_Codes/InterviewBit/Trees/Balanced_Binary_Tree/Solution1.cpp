@@ -2,7 +2,7 @@
 
 // https : //www.interviewbit.com/problems/balanced-binary-tree/
 
-// Here the height has been calculated on the basis of number of nodes and not the edges 
+// Here the height has been calculated on the basis of number of nodes and not the edges
 // For edges return -1
 
 #include <iostream>
@@ -74,6 +74,8 @@ int main()
     root->right = newNode(3);
     root->left->left = newNode(4);
     root->left->right = newNode(5);
+    // root->left->right->left = newNode(6);
+    // root->left->right->left->right = newNode(7);
 
     int k = isBalanced(root);
 

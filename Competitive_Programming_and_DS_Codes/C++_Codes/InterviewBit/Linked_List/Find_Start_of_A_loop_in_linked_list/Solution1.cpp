@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-        using namespace std;
+using namespace std;
 
 struct Node
 {
@@ -78,13 +78,13 @@ int main()
 
     head = StartOfLoop(head);
 
-    if(head!=NULL)
+    if (head != NULL)
     {
-        cout<<head->data;
+        cout << head->data;
     }
     else
     {
-        cout<<"No loop exists";
+        cout << "No loop exists";
     }
 
     return 0;

@@ -31,6 +31,8 @@ Node *start_node(Node *firstMeetingPoint, Node *head)
     Node *temp1 = firstMeetingPoint;
     Node *temp2 = firstMeetingPoint;
 
+    cout<<temp1->data<<endl;
+
     int l = 1;
 
     //for finding the length of the loop
@@ -50,6 +52,8 @@ Node *start_node(Node *firstMeetingPoint, Node *head)
     {
         temp2 = temp2->next;
     }
+
+    cout<<temp2->data<<endl;
 
     //temp1 is at starting
     //temp2 is at (m+k) position

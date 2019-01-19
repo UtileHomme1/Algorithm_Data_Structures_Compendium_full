@@ -10,13 +10,8 @@ class Solution
 public:
   int uniquePaths(int m, int n)
   {
-    //we are in the first row or the first column
-    if(m==1 || n==1)
-    {
-      return 1;
-    }
-    else
-    {
+
+
       int dp[n][m];
       dp[0][0] = 0;
 
@@ -39,7 +34,7 @@ public:
 
         return dp[n-1][m-1];
     }
-  }
+
 };
 
 int main()

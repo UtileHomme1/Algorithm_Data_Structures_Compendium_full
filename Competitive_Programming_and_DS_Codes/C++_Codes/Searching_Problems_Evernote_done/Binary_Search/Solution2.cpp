@@ -5,7 +5,7 @@ using namespace std;
 
 int bsearch(int a[], int l, int h, int x)
 {
-	while(l<=h)
+	if(l<=h)
 	{
 		int mid = l + (h-l)/2;
 
@@ -17,7 +17,7 @@ int bsearch(int a[], int l, int h, int x)
 		{
 			return bsearch(a,mid+1,h,x);
 		}
-		else
+		else if(a[mid]==x)
 		{
 			return mid;
 		}
@@ -35,9 +35,8 @@ int main() {
 
 	int l=0, h=n-1;
 	//enter the value to be searched
-	cin>>x;
 
-	int pos = bsearch(a,l,h,x);
+	int pos = bsearch(a,l,h,4);
 
 	if(pos==-1)
 	{
